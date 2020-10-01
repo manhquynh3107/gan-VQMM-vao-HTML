@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="ShopQuynhArtist,shopuytin,shop24/7">
+
+    <title>Trang Web Ban Hang 24/7</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="css/typo/typo.css" />
+    <link rel="stylesheet" href="css/hc-canvas-luckwheel.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="data.js"></script>
+    <script src="product.js"></script>
+    <script src="manage-product.js"></script>
+
+
+</head>
+<style>
+    h1 {
+        font-family: "Sofia",serif;
+        font-style: italic;
+        position: absolute;
+        left: 350px;
+        top: 20px;
+    }
+    h3 {
+        font-family: "Sofia",serif;
+        font-style: italic;
+        font-size: 71px;
+        inline-size: max-content;
+        position: absolute;
+        top: 565px;
+        left: 1px;
+    }
+    #myDIV {
+        width: 300px;
+        animation: mymove 1.5s infinite;
+        font-family: 'Oleo Script Swash Caps',cursive ; font-size:80px ; color: whitesmoke ;
+
+    }
+
+    @keyframes mymove {
+        70% {color: blueviolet;}
+    }
+</style>
+
+<style>
+    body {font-family: Arial "Noto Sans Old Italic", Helvetica, sans-serif;}
+    * {box-sizing: content-box;position: unset;top: 0px;}
+
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    /* Add a background color when the inputs get focus */
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    button:hover {
+        opacity:1;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+        padding: 14px 20px;
+        background-color: #f44336;
+    }
+
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn, .signupbtn {
+        float: left;
+        width: 50%;
+    }
+
+    /* Add padding to container elements */
+    .container {
+        padding: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: #474e5d;
+        padding-top: 50px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* Style the horizontal ruler */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f1f1f1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #f44336;
+        cursor: pointer;
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+        .cancelbtn, .signupbtn {
+            width: 100%;
+        }
+    }
+</style>
+
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 18px 19px;
+        margin: 1px -20px;
+        border: none;
+        cursor: pointer;
+        width: 15%;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+        float: unset;
+    }
+
+    /* Center the image and position the close button */
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+    }
+
+    img.avatar {
+        width: 40%;
+        border-radius: 50%;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: red;
+        cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)}
+        to {-webkit-transform: scale(1)}
+    }
+
+    @keyframes animatezoom {
+        from {transform: scale(0)}
+        to {transform: scale(1)}
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+    }
+</style>
+<style>
+    .hc-luckywheel{
+        position:fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -250px;
+        margin-left: -250px;
+    }
+</style>
+<style>
+    body{
+        background-image: url('https://i.pinimg.com/564x/a8/7d/2f/a87d2f309c5e345cb6793ed6c706bbf3.jpg');
+        background-size:1800px;
+    }
+</style>
+<style>
+    form{
+        width: 400px;
+        margin-left: 20px;
+        display: inline-block;
+    }
+
+    input {
+        margin-bottom: 10px;
+    }
+</style>
+
+<img src="https://thumbs.gfycat.com/CarelessDopeyDartfrog-size_restricted.gif" alt="Anh gif welcome" width="430" height="500" style=" position: relative; left: -10 px; width: 1500px; height: 850px;">
+<!--<img src="https://gameviet.mobi/wp-content/uploads/2019/12/Ngo-Khong-lien-quan-mobile-gameviet.mobi-2.jpg"  alt="Anh gif welcome" width="760px" height="500" >-->
+<img src="https://i.pinimg.com/originals/c0/64/0c/c0640cd6d457349ee590188a4c58bd9d.gif" alt="Anh gif welcome" style=" width:1500px; height:600px">
+
+<div id="myDIV">
+    <h1> Shop Quỳnh Artist </h1>
+
+    <br/>
+    <br/>
+
+    <h3> Chào Mừng Quý Khách Đến Với Cửa Hàng </h3>
+
+</div>
+
+
+<button type="button" style="font-size: larger; position: absolute; top: -10px"  onclick = "window.location.reload()">Trang Chủ</button>
+<p id="home">.</p>
+
+
+<br/>
+<br/>
+
+<label for="money" style="color: aquamarine">Mời Bạn Chọn Loại Thẻ Phù Hợp:</label>
+<select name="money" id="money" >
+    <option value="Viettel" >VIETTEL</option>
+    <option value="Mobiphone" >MOBIPHONE</option>
+    <option value="Vinaphone" >VINAPHONE</option>
+    <option value="Vietnammobile" >VIETNAMMOBILE</option>
+    <option value="Zing">ZING</option>
+</select>
+
+<br/>
+<br/>
+
+<label for="cost" style="color: aquamarine">Bạn Hãy Chọn Giá Trị Của Thẻ Phù Hợp Với Mệnh Giá Thẻ Cào:</label>
+<select name="cost" id="cost">
+    <option value="">-- Chọn đúng mệnh giá. Sai mất thẻ --</option>
+    <option value="20.000d">20.000d</option>
+    <option value="50.000d">50.000d</option>
+    <option value="100.000">100.000d</option>
+    <option value="200.000d">200.000d</option>
+    <option value="500.000d">500.000d</option>
+    <option value="1.000.000d">1.000.000d</option>
+</select>
+
+<br/>
+<br/>
+
+<button onclick="checkCard()" style="   position: absolute;
+    top: -3px;
+    left: 260px;
+">NẠP THẺ</button>
+<p id="check">.</p>
+
+<script>
+    function checkCard(){
+        document.getElementById('check').value = alert('Ban Da Nap The Thanh Cong Vao Tai Khoan');
+    }
+</script>
+
+
+<button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Đây Là Nút Xem Giờ...Nhé!!!</button>
+<p id="demo" style="text-align: center ;font-family: 'Oleo Script Swash Caps',fantasy ; font-size:30px ; color: aquamarine;">.</p>
+
+<!--<audio controls autoplay>-->
+<!--    <source src="../file/bell.mp3" type="audio/mpeg">-->
+<!--</audio>-->
+
+<body>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:200px;position: absolute;left: 1221px;">Đăng Ký</button>
+<div id="id01" class="modal" style="z-index: 100">
+    <form class="modal-content" action="/action_page.php"><br>
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">Đóng</span>
+        <div align="center" class="box-img">
+            <img src="https://i.pinimg.com/564x/48/5f/b6/485fb6b2aafbbfae7b2131a1f9f5688f.jpg" width="300" height="400" alt="Avatar for SignUp">
+        </div>
+        <h1 style="color: burlywood; text-align: center;font-size: xxx-large ;top: 450px;right: 5px; font-family: 'Oleo Script Swash Caps',serif" >Đăng Ký Đi Ngại Gì </h1>
+        <div class="container">
+            <p style= "text-align: center; color: burlywood;">Hãy Điền Đầy Đủ Thông Tin Vào Phiếu Sau.</p>
+            <hr>
+            <label for="email"><b>Nhập Email</b></label>
+            <input type="text" placeholder="Nhập Email" name="email" required>
+
+            <label for="psw"><b>Mật Khẩu</b></label>
+            <input type="password" placeholder="Mật Khẩu" name="psw" required>
+
+            <label for="psw-repeat"><b>Nhập lại Mật Khẩu</b></label>
+            <input type="password" placeholder="Nhập lại Mật Khẩu" name="psw-repeat" required>
+
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Nhớ Tài Khoản Của Tôi
+            </label>
+
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn"  style="inline-size :-webkit-fill-available">Đăng Ký Tài Khoản</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" >Thôi,Có Tài Khoản Rồi Không Đăng Ký Nữa!!!!</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Get the modal
+    let modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+
+
+<br/>
+<br/>
+
+
+<body>
+
+
+<button onclick="document.getElementById('id02').style.display='block'" style="width:200px;position: absolute;left: 975px;">Đăng Nhập</button>
+
+<div id="id02" class="modal" style="z-index: 100">
+
+    <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+            <img src="https://i.pinimg.com/originals/fe/ba/ea/febaeafc6efd90e86e1dc26f3ae6c3f9.jpg"  width="500" height="400" alt="Avatar" class="avatar">
+            <h1 style= " color: burlywood; text-align: center ;font-size: xxx-large ; top: 295px ; left: 660px">Đăng Nhập</h1>
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Tên Đăng Nhập</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Mật Khẩu</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit">Đăng Nhập</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Nhớ Tài Khoản Của Tôi
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Thôi,Không Đăng Nhập Nữa</button>
+            <span class="psw">Quên Mật Khẩu <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Get the modal
+    let modal = document.getElementById('id02');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</body>
+
+<body>
+
+<form id="form-add" class="form-group">
+    <fieldset>
+        <legend>ADD PRODUCT</legend>
+        <input class="form-control" id="product-name" placeholder="Product Name">
+        <input class="form-control" id="product-price" placeholder="Product Price">
+        <input class="form-control" id="product-color" placeholder="Product Color">
+        <input class="form-control" id="product-desc" placeholder="Product Description">
+
+        <button type="button" class="btn btn-success" onclick="addProduct()">Add</button>
+    </fieldset>
+</form>
+<form id="form-edit" class="form-group" style="display: none">
+    <fieldset>
+        <legend>EDIT PRODUCT</legend>
+        <input class="form-control" id="edit-name" placeholder="Product Name">
+        <input class="form-control" id="edit-price" placeholder="Product Price">
+        <input class="form-control" id="edit-color" placeholder="Product Color">
+        <input class="form-control" id="edit-desc" placeholder="Product Description">
+
+        <button type="button" class="btn btn-success" onclick="editProduct()">Save</button>
+    </fieldset>
+</form>
+<div id="product-manage"></div>
+<script>
+    let shop = new ProductManage(" Shop Artist ");
+    shop.init();
+    display(shop.getHtml());
+    let currentProduct = 0;
+
+    function display(table) {
+        document.getElementById('product-manage').innerHTML = table;
+        Data.saveData(store.products,PRODUCT);
+    }
+    function addProduct() {
+        let name = document.getElementById("product-name").value;
+        let price = document.getElementById("product-price").value;
+        let color = document.getElementById("product-color").value;
+        let desc = document.getElementById("product-desc").value;
+        let product = new Product(name,price,color,desc);
+
+        store.addProduct(product);
+        display(store.getHtml());
+        document.getElementById('form-add').reset();
+    }
+
+    function edit(index) {
+        document.getElementById('form-edit').style.display = "inline-block";
+        let product = store.getProductByIndex(index);
+        document.getElementById('edit-name').value = product.name;
+        document.getElementById('edit-price').value = product.price;
+        document.getElementById('edit-color').value = product.color;
+        document.getElementById('edit-desc').value = product.desc;
+        currentProduct = index;
+    }
+
+    function editProduct() {
+        let name = document.getElementById("edit-name").value;
+        let price = document.getElementById("edit-price").value;
+        let color = document.getElementById("edit-color").value;
+        let desc = document.getElementById("edit-desc").value;
+        store.products[currentProduct].edit(name,price,color,desc);
+        display(store.getHtml());
+        document.getElementById('form-edit').reset();
+        document.getElementById('form-edit').style.display = "none";
+    }
+
+    function del(index) {
+        store.deleteProduct(index);
+        display(store.getHtml());
+    }
+</script>
+</body>
+
+<br/>
+<br/>
+
+
+<div class="wrapper typo" id="wrapper">
+    <section id="luckywheel" class="hc-luckywheel">
+        <div class="hc-luckywheel-container">
+            <canvas class="hc-luckywheel-canvas" width="500px" height="500px">Vòng Quay May Mắn</canvas>
+        </div>
+        <a class="hc-luckywheel-btn" href="javascript:">Quay</a>
+    </section>
+</div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="js/hc-canvas-luckwheel.js"></script>
+
+<script>
+    let isPercentage = true;
+    let prizes = [
+        {
+            text: "Áo thun J2Team",
+            img: "images/Ao.png",
+            number: 1, // 1%,
+            percentpage: 0.01 // 1%
+        },
+        {
+            text: "Nón J2 Team",
+            img: "images/Non.png",
+            number: 1,
+            percentpage: 0.05 // 5%
+        },
+        {
+            text: "Vòng Tay J2Team",
+            img: "images/Vong.png",
+            number : 1,
+            percentpage: 0.1 // 10%
+        },
+        {
+            text: "J2Team Security",
+            img: "images/j2_logo.png",
+            number: 1,
+            percentpage: 0.24 // 24%
+        },
+        {
+            text: "Chúc bạn may mắn lần sau",
+            img: "images/miss.png",
+            percentpage: 0.6 // 60%
+        },
+    ];
+    document.addEventListener(
+        "DOMContentLoaded",
+        function() {
+            hcLuckywheel.init({
+                id: "luckywheel",
+                config: function(callback) {
+                    callback &&
+                    callback(prizes);
+                },
+                mode : "both",
+                getPrize: function(callback) {
+                    let rand = randomIndex(prizes);
+                    let chances = rand;
+                    callback && callback([rand, chances]);
+                },
+                gotBack: function(data) {
+                    if(data == null){
+                        Swal.fire(
+                            'Chương trình kết thúc',
+                            'Đã hết phần thưởng',
+                            'error'
+                        )
+                    } else if (data === 'Chúc bạn may mắn lần sau'){
+                        Swal.fire(
+                            'Bạn không trúng thưởng',
+                            data,
+                            'error'
+                        )
+                    } else{
+                        Swal.fire(
+                            'Đã trúng giải',
+                            data,
+                            'success'
+                        )
+                    }
+                }
+            });
+        },
+        false
+    );
+    function randomIndex(prizes){
+        if(isPercentage){
+            let counter = 1;
+            for (let i = 0; i < prizes.length; i++) {
+                if(prizes[i].number === 0){
+                    counter++
+                }
+            }
+            if(counter === prizes.length){
+                return null
+            }
+            let rand = Math.random();
+            let prizeIndex = null;
+            console.log(rand);
+            switch (true) {
+                case rand < prizes[4].percentpage:
+                    prizeIndex = 4 ;
+                    break;
+                case rand < prizes[4].percentpage + prizes[3].percentpage:
+                    prizeIndex = 3;
+                    break;
+                case rand < prizes[4].percentpage + prizes[3].percentpage + prizes[2].percentpage:
+                    prizeIndex = 2;
+                    break;
+                case rand < prizes[4].percentpage + prizes[3].percentpage + prizes[2].percentpage + prizes[1].percentpage:
+                    prizeIndex = 1;
+                    break;
+                case rand < prizes[4].percentpage + prizes[3].percentpage + prizes[2].percentpage + prizes[1].percentpage  + prizes[0].percentpage:
+                    prizeIndex = 0;
+                    break;
+            }
+            if(prizes[prizeIndex].number !== 0){
+                prizes[prizeIndex].number = prizes[prizeIndex].number - 1
+                return prizeIndex
+            }else{
+                return randomIndex(prizes)
+            }
+        }else{
+            let counter = 0;
+            for (let i = 0; i < prizes.length; i++) {
+                if(prizes[i].number === 0){
+                    counter++
+                }
+            }
+            if(counter === prizes.length){
+                return null
+            }
+            let rand = (Math.random() * (prizes.length)) >>> 0;
+            if(prizes[rand].number !== 0){
+                prizes[rand].number = prizes[rand].number - 1
+                return rand
+            }else{
+                return randomIndex(prizes)
+            }
+        }
+    }
+</script>
+
+</html>
